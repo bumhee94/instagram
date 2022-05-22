@@ -13,7 +13,7 @@ function update(userId) {
 		dataType:"json"
 	}).done(res=>{
 		console.log("성공");
-	}).fail(error=>{
+	}).fail(error=>{ 
 		console.log("실패");
 	});
 	
