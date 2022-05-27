@@ -12,7 +12,7 @@ function update(userId) {
 		contentType:"application/x-www-form-urlencoded; charset=utf-8",
 		dataType:"json"
 	}).done(res=>{
-		console.log("성공");
+		console.log("성공"); 
 	}).fail(error=>{ 
 		console.log("실패");
 	});
