@@ -23,6 +23,6 @@ public class UserUpdateDto {
 				.bio(bio)
 				.phone(phone)
 				.gender(gender)
-				.build();
+				.build(); 
 	}
 }
