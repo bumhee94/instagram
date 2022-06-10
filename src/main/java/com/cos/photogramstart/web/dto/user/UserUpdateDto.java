@@ -1,5 +1,7 @@
 package com.cos.photogramstart.web.dto.user;
 
+import javax.validation.constraints.NotBlank;
+
 import com.cos.photogramstart.domain.user.User;
 
 import lombok.Data;
@@ -7,7 +9,9 @@ import lombok.Data;
 @Data
 public class UserUpdateDto {
 
+	@NotBlank
 	private String name;
+	@NotBlank
 	private String password;
 	private String website;
 	private String bio;
