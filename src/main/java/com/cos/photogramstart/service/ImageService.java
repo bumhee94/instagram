@@ -28,6 +28,13 @@ public class ImageService {
 	@Value("${file.path}")
 	private String uploadForder; 
 	
+	
+	@Transactional(readOnly = true)
+	public List<Image> 인기사진()
+	{
+		return imageRepository.mPopular();
+	}
+	
 	@Transactional(readOnly = true)
 	public Page<Image> 이미지스토리(int principalId, Pageable pageable)
 	{
