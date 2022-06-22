@@ -7,9 +7,16 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.cos.photogramstart.config.oauth.OAuth2DetailsService;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
+	
+	private final OAuth2DetailsService oAuth2DetailsService;
 	
 	@Bean 
 	public BCryptPasswordEncoder encode()
@@ -27,6 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.formLogin()
 		.loginPage("/auth/signin")
 		.loginProcessingUrl("/auth/signin")
-		.defaultSuccessUrl("/");
+		.defaultSuccessUrl("/")
+		.and()
+		.oauth2Login()
+		.userInfoEndpoint()
+		.userService(oAuth2DetailsService);
 	}
 }
