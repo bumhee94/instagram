@@ -67,7 +67,7 @@ public class ValidationAdvice {
 					{
 						errorMap.put(error.getField(), error.getDefaultMessage());
 					}
-					throw new CustomValidationException("유효성 검사 실패", errorMap);
+					throw new CustomValidationException("유효성 검사 실패",  errorMap);
 				}
 			}
 		}
