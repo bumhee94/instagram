@@ -62,10 +62,10 @@ public class UserApiController {
 			)
 	{
 			System.out.println(userUpdateDto);
-			User userEntity = userService.회원수정(id, userUpdateDto.toEntity());
+			User userEntity = userService.회원수정(id, userUpdateDto.toEntity()); 
 	
 			principalDetails.setUser(userEntity);
-			return new CMRespDto<>(1, "회원수정완료", userEntity);
+			return new CMRespDto<>(1, "회원 수정완료", userEntity);
 
 	}
 }
